@@ -24,16 +24,28 @@ export default function Home() {
 
   return (
     <div>
-    {/* <Header/> */}
+      {/* <Header/> */}
       <div className="video-container">
         <video autoPlay muted loop id="bg-video">
           <source src="/video-2.mp4" type="video/mp4" />
         </video>
         <div className="video-overlay">
-          <h1>Welcome to CodeShare Forum</h1>
-          <p>Your go-to platform for coding questions and answers.</p>
+          <h1 className="typing">Welcome Back  To Stackcampus!</h1>
+        </div>
+        <div className="box-containers">
+          <div className="morethan-q">
+            100+ <br />
+            Questions asked/Week
           </div>
-        
+          <div className="morethan-q">
+            90% <br />
+            Questions Answered/Week
+          </div>
+          <div className="morethan-q">
+            1000+ <br />
+            Visitors/Week
+          </div>
+        </div>
       </div>
 
       <div className="questions-section">
@@ -75,9 +87,8 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="Arowco">
-                    <img src= {Arow}alt="" className="Arow"/>
+                    <img src={Arow} alt="" className="Arow" />
                   </div>
-                 
                 </Link>
               </h3>
             </div>

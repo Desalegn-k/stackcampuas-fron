@@ -191,9 +191,52 @@ text-decoration: none;
    
 }
 .video-overlay h1 {
-  color: aqua;
+  text-align: center;
+  margin-top: 20%;
+   font-weight: 800;
+  
+ 
+  font-size: 3rem;
+ background: linear-gradient(135deg, #ff6a00, #ea09ee);
+
+/* gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
   
 }
+.box-containers{
+  width: 90%;
+  margin: 5% auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.morethan-q {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5); /* updated vibrant gradient */
+  padding: 12px 30px; /* slightly bigger padding */
+  font-weight: 800;
+  font-size: 25px;
+  width: 270px;
+  border-radius: 50px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease; /* smooth transition */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* subtle shadow */
+}
+.morethan-q:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #ff6a00, #ee0979) !important;
+  color: white; /* keep text readable */
+}
+
+
+
+
 @media(max-width:800px){
   .asklink{
     display: block;
@@ -230,15 +273,42 @@ text-decoration: none;
 .ask-btn {
   
   text-decoration: none;
-  background-color: #007bff;
-  color:white;
+  background-color: white;
+  border: 3px solid   dodgerblue;
+border-radius: 50px;
+color: dodgerblue;
   font-size: 20px;
-  padding: 2%;
-  border-radius: 20px;
+  padding: 4%;
+  border-radius: 50px;
   
 }
 .title-desc{
   width: 90%;
   margin:1% 1% 1% 7%
+}
+.box-containers{
+  width: 50%;
+  margin:   18% auto 0 auto;
+  display: block;
+  text-align: center;
+   
+}
+.morethan-q {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5); /* updated vibrant gradient */
+  padding: 35px 30px; /* slightly bigger padding */
+  font-weight: 800;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease; /* smooth transition */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* subtle shadow */
+  margin-top: 10%;
+  
+}
+.video-overlay h1{
+  margin-top: 7%;
 }
 }

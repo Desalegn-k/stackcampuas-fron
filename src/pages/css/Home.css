@@ -119,12 +119,43 @@
 
 .ask-btn {
   
-  text-decoration: none;
+  /* text-decoration: none;
   background-color: #007bff;
   color:white;
   font-size: 40px;
   padding: 1%;
-  border-radius: 20px;
+  border-radius: 20px; */
+  
+      display: inline-block;
+       width: 270px;
+padding : 2% 1% 1% 4%;
+
+
+color:dodgerblue;
+font-size: 20px;
+
+
+
+font-weight: 800;
+
+
+
+background-color: white;
+text-transform: uppercase;
+
+
+
+border: 3px solid   dodgerblue;
+border-radius: 50px;
+text-decoration: none;
+
+
+
+ 
+
+ 
+      
+
   
 }
 .ask-btn:hover{
@@ -132,9 +163,9 @@
     /* transition: transform 0.03s ease; */
      transition: transform 1.5s ease;
     transform: scale(1.03);
-
-  background-color: #FF8500;
-
+ box-shadow: 0 0 10px 0 dodgerblue inset,0 0 20px 0  ;
+   border: 3px solid aqua;
+  
 }
 .ask-all{
   font-weight: bold;

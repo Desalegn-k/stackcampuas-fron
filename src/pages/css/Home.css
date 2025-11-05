@@ -190,6 +190,10 @@ text-decoration: none;
   width: 45px;
    
 }
+.video-overlay h1 {
+  color: red;
+  
+}
 @media(max-width:800px){
   .asklink{
     display: block;

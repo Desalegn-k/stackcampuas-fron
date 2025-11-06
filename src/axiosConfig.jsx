@@ -1,5 +1,5 @@
 import axios from 'axios';
 const axiosBase = axios.create({
-  baseURL: "https://stackcapus-desalegn.onrender.com/",
+  baseURL: "https://stackcampus-desu.onrender.com/api",
 });
 export default axiosBase

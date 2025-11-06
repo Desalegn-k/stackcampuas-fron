@@ -11,7 +11,7 @@
      e.preventDefault();
      try {
        const res = await axios.post(
-         `https://stackcapus-desalegn.onrender.com/api/users/reset-password/${token}`,
+         `https://stackcampus-desu.onrender.com/api/users/reset-password/${token}`,
          { password }
        );
        setMessage(res.data.msg);

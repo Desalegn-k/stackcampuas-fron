@@ -226,18 +226,20 @@ text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease; /* smooth transition */
   box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* subtle shadow */
+  z-index: 10;
 }
 .morethan-q:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg, #ff6a00, #ee0979) !important;
-  color: white; /* keep text readable */
-}
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #ff6a00, green);
+      
+    }
 
 
 
 
 @media(max-width:800px){
+  
   .asklink{
     display: block;
   }
@@ -311,4 +313,11 @@ color: dodgerblue;
 .video-overlay h1{
   margin-top: 7%;
 }
+.all{
+    width: 500px;
+     
+    margin: 0 auto !important;
+     
+     
+  }
 }

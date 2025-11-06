@@ -89,7 +89,7 @@ export default function Login() {
   }
 
   return (
-    <>
+    <div className="all">
       {/* <Header/> */}
       <section className="whole-co">
         <section className="login-container">
@@ -199,6 +199,6 @@ export default function Login() {
           </p>
         </section>
       </section>
-    </>
+    </div>
   );
 }

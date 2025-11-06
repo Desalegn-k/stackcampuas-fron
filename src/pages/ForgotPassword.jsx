@@ -10,7 +10,7 @@
      e.preventDefault();
      try {
        const res = await axios.post(
-         "http://localhost:5300/api/users/forgot-password",
+         "https://stackcapus-desalegn.onrender.com/api/users/forgot-password",
          { email }
        );
        setMessage(res.data.msg);

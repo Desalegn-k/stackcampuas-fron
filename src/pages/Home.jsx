@@ -23,14 +23,14 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="all">
       {/* <Header/> */}
       <div className="video-container">
         <video autoPlay muted loop id="bg-video">
           <source src="/video-2.mp4" type="video/mp4" />
         </video>
         <div className="video-overlay">
-          <h1 className="typing">Welcome Back  To Stackcampus!</h1>
+          <h1 className="typing">Welcome Back To Stackcampus!</h1>
         </div>
         <div className="box-containers">
           <div className="morethan-q">
@@ -39,7 +39,7 @@ export default function Home() {
           </div>
           <div className="morethan-q">
             90% <br />
-            Questions Answered/Week
+            <p className="test">Questions Answered/Week</p>
           </div>
           <div className="morethan-q">
             1000+ <br />
@@ -47,6 +47,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
 
       <div className="questions-section">
         <div className="ask-all">

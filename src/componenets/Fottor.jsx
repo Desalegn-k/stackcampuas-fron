@@ -4,7 +4,7 @@ import "./Fottor.css"; // for styling
 
 export default function Layout() {
   return (
-    <div>
+    <div className="all">
       {/* Footer */}
 
       <footer className="app-footer">

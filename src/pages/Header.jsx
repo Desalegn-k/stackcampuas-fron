@@ -37,7 +37,7 @@ export default function Header() {
   }
 
   return (
-    <>
+    <div className="all">
       <header className="app-header">
         <Link to="#">
           <img src="/stack.png" alt="StackCampus" className="logo" />
@@ -142,6 +142,6 @@ export default function Header() {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 }

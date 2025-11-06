@@ -34,9 +34,19 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    checkUser();
-  }, []);
+ useEffect(() => {
+   // Only check user if we are NOT on public pages
+   const publicPaths = ["/login", "/register", "/ForgotPassword"];
+   const currentPath = window.location.pathname;
+
+   if (
+     !publicPaths.includes(currentPath) &&
+     !currentPath.startsWith("/reset-password")
+   ) {
+     checkUser();
+   }
+ }, []);
+
 
   return (
     <Appstate.Provider value={{ user, setUser }}>

@@ -6,18 +6,33 @@
    const [email, setEmail] = useState("");
    const [message, setMessage] = useState("");
 
-   const handleSubmit = async (e) => {
-     e.preventDefault();
-     try {
-       const res = await axios.post(
-         "https://stackcampus-desu.onrender.com/api/users/forgot-password",
-         { email }
-       );
-       setMessage(res.data.msg);
-     } catch (err) {
-       setMessage("Error sending reset link");
-     }
-   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "https://stackcapus-desalegn.onrender.com/api/users/forgot-password",
+        { email }
+      );
+      setMessage(res.data.msg);
+    } catch (err) {
+      console.error("Forgot password error:", err); // 👈 log full error to browser console
+
+      if (err.response) {
+        // Server responded with a specific status
+        console.error("Backend response:", err.response.data);
+        setMessage(err.response.data.msg || "Server error occurred");
+      } else if (err.request) {
+        // No response from backend (network or CORS)
+        console.error("No response from server:", err.request);
+        setMessage("No response from server");
+      } else {
+        // Something else went wrong
+        console.error("Error setting up request:", err.message);
+        setMessage("Error sending reset link");
+      }
+    }
+  };
+
 
    return (
      <div

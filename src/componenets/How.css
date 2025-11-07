@@ -16,3 +16,12 @@ h2{
 .how-container h1{
   color: orange;
 }
+ @media(max-width:800px){
+  .how-container{
+   width: 450px;
+    margin-left: 3px;
+    box-shadow: 0 0 0px 1px #ccc;
+    
+  }
+
+}

@@ -42,7 +42,7 @@ export default function QuestionDetailPage() {
     setAnswers(aRes.data);
   }
 
-  if (!question) return <p>Loading question...</p>;
+  if (!question) return <p className="lodding">Loading question...</p>;
 
   return (
     <div className="container">

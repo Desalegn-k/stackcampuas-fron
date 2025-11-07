@@ -57,8 +57,9 @@ export default function Header() {
             <>
               <button
                 onClick={handleLogout}
+                className="logout"
                 style={{
-                  backgroundColor: "#dc3545",
+                  backgroundColor: "transparent",
                   color: "#ffffff",
                   padding: "3px 20px",
                   border: "none",

@@ -4,8 +4,7 @@
 }
 .app-footer{
   padding:  2% 5%;
-  background-color: #3B455A;
-  
+  background: linear-gradient(135deg ,dodgerblue,orange );
   display: flex;
   justify-content: space-between;
 }

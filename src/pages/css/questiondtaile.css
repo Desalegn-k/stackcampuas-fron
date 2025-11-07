@@ -7,7 +7,9 @@
 .container{
   background-color: #FFFFFF;
   width: 90%;
-  margin: 0 auto;
+  margin:   0 auto;
+   
+  
 
 
 }
@@ -100,10 +102,18 @@
   color: white;
 }
 .answersubmitbttun button:hover{
-   transition: transform 1.5s ease;
-    transform: scale(1.03);
+    
   
-  background-color: #5539e1;
+  background-color:orange;
+}
+.answersubmitbttun button:focus{
+  background-color: gray;
+  cursor:wait;
+}
+.lodding{
+  color: springgreen;
+  font-size: 40px;
+  text-align: center;
 }
 
  @media(max-width:800px){
@@ -113,5 +123,10 @@
   .username-avater{
     text-align: center;
 
+  }
+  .container{
+    width: 450px;
+    margin-top: 20%;
+     
   }
  }

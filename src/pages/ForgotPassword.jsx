@@ -36,7 +36,7 @@
 
    return (
      <div
-       style={{ textAlign: "center", marginTop: "100px" }}
+       style={{ textAlign: "center", marginTop: "10px" }}
        className="classfor"
      >
        <h2>Forgot Password</h2>
@@ -56,7 +56,7 @@
            <button type="submit" className="">Send Reset Link</button>
          </div>
        </form>
-       <p>{message}</p>
+       <p className="messageboth">{message}</p>
      </div>
    );
  };

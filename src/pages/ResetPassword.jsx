@@ -1,6 +1,7 @@
  import React, { useState } from "react";
  import { useParams,useNavigate } from "react-router-dom";
  import axios from "axios";
+ import "./css/ResetPassword.css";
 
  const ResetPassword = () => {
    const { token } = useParams();
@@ -15,7 +16,7 @@
          `https://stackcapus-desalegn.onrender.com/api/users/reset-password/${token}`,
          { password }
        );
-       if(password.length < 8){
+       if(password.value.length < 8){
         setMessage("Minumim pssword length should be 8")
        }
        setMessage(`${res.data.msg} Navigating to login page...`);
@@ -28,21 +29,27 @@
    };
 
    return (
-     <div style={{ textAlign: "center", marginTop: "100px" }}>
+     <div
+       style={{ textAlign: "center", marginTop: "100px" }}
+       className="classfor"
+     >
        <h2>Reset Password</h2>
        <form onSubmit={handleSubmit} className="resetform">
          <input
+           className="forget"
            type="password"
            placeholder="Enter new password"
            value={password}
            onChange={(e) => setPassword(e.target.value)}
            required
          />
-        
-         
-         <button type="submit" className="resetbtn">Reset Password</button>
+        <div className="resetbtn">
+         <button type="submit" className="">
+           Reset Password
+         </button>
+         </div>
        </form>
-       <p>{message}</p>
+       <p >{message}</p>
      </div>
    );
  };

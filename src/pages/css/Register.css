@@ -55,9 +55,14 @@ ease-in-out;
 
 .input-cont{
   border: solid;
-  border-width: 0.1px;
+  border-width: 0.3x;
   border-radius: 8px;
   margin: 4% 0;
+  border-color: dodgerblue;
+}
+.input-cont:focus{
+  border-color: red
+
 }
 .last-first{display: flex;
 justify-content: space-between;}
@@ -65,21 +70,26 @@ justify-content: space-between;}
 .L-name{
   border: solid;
   margin-left: 8%;
-   border-width:  0.1px;
+   border-width:  px;
     border-radius: 8px;
   
    padding:2% 2% ;
+   border-color: dodgerblue;
+    
     
 }
  .F-name{
   border: solid;
    border-radius: 8px;
-  border-width:  0.1px;
+  
   
   padding:2% 2% ;
+  border-color: dodgerblue;
   
     
  }
+  
+
  .F-name input{
   width: 100%;
  }
@@ -155,11 +165,14 @@ justify-content: space-between;}
    } 
    .btn:hover{
     background-color: #FF8500;
-    transition: transform 1.5s ease;
-    transform: scale(1.03);
+    
     border: none;
  
      
+   }
+   .btn:focus{
+    cursor: wait;
+    background-color: gray;
    }
    #provid{
      
@@ -202,12 +215,12 @@ justify-content: space-between;}
   }
  .register-container{
    margin: 0 0 5% 0 ;
-    padding: 6%;
-    width: 100%;
+    
+    width: 450px;
      
   }
   .discription{
-    width: 100%;
+    width: 450px;
   }
   .last-first{
     display: block;

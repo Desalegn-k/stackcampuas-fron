@@ -4,16 +4,17 @@
   padding: 0;
 }
 .app-header {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
    
-  background:  #f5f5f5;
+ background: linear-gradient(135deg ,orange,dodgerblue ,green);
   color: white;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
+  
    
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -98,19 +99,20 @@
                
 }
 .home1{
-  background-color: #F5F5F5;
-  color: black;
+ background-color: transparent;
+  color: white;
   padding: 5px 15px;
   border: none;
   border-radius:6px ;
   cursor: pointer;
+  font-weight: 800;
   
               
 }
 
 .home1:hover{
-  background-color: rgb(61, 131, 201);
-  color: white;
+   
+  color: orange;
 }
 .how{
 
@@ -118,9 +120,10 @@
   border: none;
  border-radius: 6px;
  
- color: black;
+color: white;
   
- cursor: pointer
+ cursor: pointer;
+ background-color: transparent;
 
 
    
@@ -128,8 +131,9 @@
  
 }
 .how:hover{
-  background-color: orange;
+  
   color: white;
+  text-decoration: none;
 
 }
  
@@ -143,11 +147,12 @@
 
 } */
 .how-co .how{
-  color: black;
+   color: white;
 }
 .usernamepro{
   padding-left: 2px;
-  color: #28a745;
+  color: white;
+  text-transform: uppercase;
 }
 .app-header {
   display: flex;
@@ -173,22 +178,28 @@
 
 .nav-links a {
   text-decoration: none;
-  color: black;
-  font-weight: 500;
+  color: white;
+  font-weight: 600;
+
+}
+.nav-links a:hover{
+  text-decoration: none;
+  color: orange;
 }
 
 .login-btn1 {
-  background-color: #f0fdf4;
+  background-color: transparent;
   
-  color: #1e293b;
+  color: white;
   border: none;
   padding: 5px 14px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
 }
 .login-btn1:hover{
-  background-color: #16a34a;
-  color: white;
+   
+  color:orange;
 
 }
 
@@ -207,18 +218,27 @@
 }
 .signup{
 
-  color: rgb(205, 4, 205);
+  background-color: transparent;
   border: none;
   padding: 5px 10px;
   border-radius: 6px;
+  color: white;
   cursor: pointer;
+  font-weight: 600;
   
 }
 .signup:hover{
-  background-color: #0040ff;
-  color: white;
+   
+  color:orange;
 }
+.logout{
+  
+  font-weight: 600;
 
+}
+.logout:hover{
+  color: orange !important;
+}
 /* === Mobile Styling === */
 @media (max-width: 768px) {
   .nav-links {

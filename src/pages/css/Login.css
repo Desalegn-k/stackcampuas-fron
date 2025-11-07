@@ -44,15 +44,21 @@ ease-in-out;
  margin: 2% 0;
  padding: 2%;
 }
+ input:focus{
+  
+   
+
+ }
 .pass-vi{
   display: flex;
   justify-content: space-between;
   border: solid;
   border-radius: 8px;
-  padding: 2%;
-  border-width: 0.1px;
-
+  padding: 1%;
+   border-color: dodgerblue;
+    
 }
+ 
  
 
 .showl{
@@ -92,7 +98,7 @@ ease-in-out;
  }
  .haw-m1{
   color: white;
-   background-color: #FF8500;;
+   background-color: #00ff95;;
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
@@ -100,7 +106,7 @@ ease-in-out;
   margin-left: 10%;
   border-radius: 10px;
  }
- .haw-m:hover{
+ .haw-m1:hover{
   background-color: orange;
  }
  @media (max-width: 900px) {
@@ -109,16 +115,20 @@ ease-in-out;
   }
   .login-container{
        margin: 0 0 5% 0 ;
-    padding: 6%;
      
      
-    width: 100%;
+     
+    width: 450px;
+    line-height: 40px;
   }
   .discription{
     margin: 10% 0 3% 0;
      padding: 6%;
-    width: 100%;
+    width: 450px;
      padding: 3%;
+  }
+  .input-cont{
+    margin-bottom: 30px;
   }
 }
  

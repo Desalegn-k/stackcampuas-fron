@@ -29,24 +29,17 @@ function App() {
       });
       setUser(data);
     } catch (error) {
-      navigate("/login");
+      if (window.location.pathname.startsWith("/reset-password)"))
+      {navigate("/reset-password");}
+      else
+        navigate("/login");
       console.log(error.response);
     }
   }
 
- useEffect(() => {
-   // Only check user if we are NOT on public pages
-   const publicPaths = ["/login", "/register", "/ForgotPassword"];
-   const currentPath = window.location.pathname;
-
-   if (
-     !publicPaths.includes(currentPath) &&
-     !currentPath.startsWith("/reset-password")
-   ) {
-     checkUser();
-   }
- }, []);
-
+useEffect(() => {
+  checkUser();
+}, []);
 
   return (
     <Appstate.Provider value={{ user, setUser }}>

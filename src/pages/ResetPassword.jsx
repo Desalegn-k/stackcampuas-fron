@@ -1,11 +1,12 @@
  import React, { useState } from "react";
- import { useParams } from "react-router-dom";
+ import { useParams,useNavigate } from "react-router-dom";
  import axios from "axios";
 
  const ResetPassword = () => {
    const { token } = useParams();
    const [password, setPassword] = useState("");
    const [message, setMessage] = useState("");
+   const navigate=useNavigate();
 
    const handleSubmit = async (e) => {
      e.preventDefault();
@@ -14,7 +15,10 @@
          `https://stackcapus-desalegn.onrender.com/api/users/reset-password/${token}`,
          { password }
        );
-       setMessage(res.data.msg);
+       setMessage(`${res.data.msg} Navigating to login page...`);
+        setTimeout(()=>{
+        navigate("/login")
+       },5000)
      } catch (err) {
        setMessage("Invalid or expired token");
      }

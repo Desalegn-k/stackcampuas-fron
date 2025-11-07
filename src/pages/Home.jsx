@@ -1,16 +1,26 @@
  import React, { useEffect, useState, useContext } from "react";
 import { Appstate } from "../App";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAllQuestions } from "../API/questionApi";
 import "./css/Home.css";
 import Arow from "./css/211688_forward_arrow_icon.png";
 import Header from "./Header.jsx";
+// import { Route, Routes,useNavigate } from "react-router-dom";
 
 export default function Home() {
+  
+
   const { user } = useContext(Appstate);
   const [questions, setQuestions] = useState([]);
+   const token = localStorage.getItem("token");
+   const navigate=useNavigate()
+ 
 
   useEffect(() => {
+     if (!token) {
+       navigate("/login");
+       return;
+     }
     async function fetchQuestions() {
       try {
         const res = await getAllQuestions();
@@ -21,6 +31,8 @@ export default function Home() {
     }
     fetchQuestions();
   }, []);
+
+  
 
   return (
     <div className="all">

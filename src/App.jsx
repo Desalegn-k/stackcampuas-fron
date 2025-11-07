@@ -23,16 +23,19 @@ function App() {
   const navigate = useNavigate();
 
   async function checkUser() {
+      
     try {
       const { data } = await axios.get("/users/check", {
         headers: { Authorization: `Bearer ${token}` },
+
       });
       setUser(data);
+    
+      
     } catch (error) {
-      if (window.location.pathname.startsWith("/reset-password)"))
-      {navigate("/reset-password");}
-      else
-        navigate("/login");
+       
+
+        // navigate("/login");
       console.log(error.response);
     }
   }

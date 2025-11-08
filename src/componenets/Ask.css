@@ -1,22 +1,29 @@
 .main-wrap{
    background-color: #F8F8F8;
+   
+ 
+   
 }
 
 .ask-container{
-  width: 80%;
-  margin: 2% auto;
+  
+  margin: 0 auto;
+   padding: 3px 3px !important;
  
 }
 .post-q{
   display: block;
+  width: 100%;
+  
 }
 .common-2{
   border: solid;
-  border-width: 1px;
-  border-radius: 4px;
-  border-color: rgb(94, 91, 91);
+  /* border-width: 1px; */
+  border-radius: 5px;
+   
   
   margin: 2% 2%;
+  border-color: dodgerblue;
 }
 .common-2 input{
   
@@ -64,19 +71,69 @@
   
    width: 50%;
    padding: 1%;
-   border: none;
-   border-radius: 20px;
-   background-color:#0053C7 ;
-   color: white;
-   font-size: 30px;
+  background-color:  white;
+  color:dodgerblue;
+  border: solid;
+  width: 70%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border-color: black;
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 7px;
    font-family: Poppins, Arial, Helvetica, sans-serif !important;
+    box-shadow: 0 0 10px 0 dodgerblue inset,0 0 20px 0  ;
 
 }
 .post-btn:hover{
-  background-color: #2408ac;
-   transition: transform 1.5s ease;
-    transform: scale(1.03);
+   background-color: transparent;
+  box-shadow: 0 0 10px 0 dodgerblue inset,0 0 20px 0  ;
+   border: 3px solid aqua;
+   color: orange;
+   
+}
+.post-btn:focus{
+ background-color: gray;
+ cursor: wait;
 }
 .success{
   color: green;
+}
+@media(max-width:800px){
+  .main-wrap{
+    width: 450px;
+    margin-top: 70px;
+  }
+  .common-2{
+  width: 450px;
+
+   margin: 20px 0;
+}
+.post{
+  margin-top: 50px;
+
+}
+.post-btn{
+  background-color: transparent;
+  color:dodgerblue;
+  border: solid;
+  width: 70%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border-color: dodgerblue;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.post-btn:hover{
+  background-color: transparent;
+  box-shadow: 0 0 10px 0 dodgerblue inset,0 0 20px 0  ;
+   border: 3px solid aqua;
+   color: orange;
+  
+}
+.post-btn:focus{
+ background-color: gray;
+ cursor: wait;
+}
+
 }

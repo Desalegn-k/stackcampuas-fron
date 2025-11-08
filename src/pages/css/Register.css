@@ -212,9 +212,10 @@ justify-content: space-between;}
    @media (max-width: 900px) {
   .whole-co{
     display: block;
+    width: 100%;
   }
  .register-container{
-   margin: 0 0 5% 0 ;
+   margin: 100px 0 5% 0 ;
     
     width: 450px;
      

@@ -16,9 +16,6 @@
          `https://stackcapus-desalegn.onrender.com/api/users/reset-password/${token}`,
          { password }
        );
-       if(password.value.length < 8){
-        setMessage("Minumim pssword length should be 8")
-       }
        setMessage(`${res.data.msg} Navigating to login page...`);
         setTimeout(()=>{
         navigate("/login")

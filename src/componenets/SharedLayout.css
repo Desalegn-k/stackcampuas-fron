@@ -1,5 +1,5 @@
 .main {
   flex: 1;
-  padding: 50px 20px 20px 20px; /* top padding = header height, bottom padding = footer height */
-  margin-top: 7%;
+  padding: 20px 20px 70px; /* top padding = header height, bottom padding = footer height */
+  margin-top: 10%;
 }

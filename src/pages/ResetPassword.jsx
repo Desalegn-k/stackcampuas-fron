@@ -1,7 +1,7 @@
  import React, { useState } from "react";
  import { useParams,useNavigate } from "react-router-dom";
  import axios from "axios";
- import "./css/ResetPassword.css";
+//  import "./css/ResetPassword.css";
 
  const ResetPassword = () => {
    const { token } = useParams();
@@ -40,6 +40,7 @@
            value={password}
            onChange={(e) => setPassword(e.target.value)}
            required
+           
          />
         <div className="resetbtn">
          <button type="submit" className="">

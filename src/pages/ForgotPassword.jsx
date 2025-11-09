@@ -39,6 +39,13 @@
        style={{ textAlign: "center", marginTop: "10px" }}
        className="classfor"
      >
+       <p className="messageboth" style={{ textAlign: "left", color: "red",backgroundColor:"pink",border:"solid",borderColor:"red", borderRadius:"10px",padding:"1%",fontSize:"18px" }}>
+         {" "}
+         Password reset is currently unavailable due to server response.
+         <br />
+         Please contact me at{" "}
+         <a href="mailto:desu2464@gmail.com">desu2464@gmail.com</a> for help.{" "}
+       </p>
        <h2>Forgot Password</h2>
        <form onSubmit={handleSubmit} className="">
          <div className="resetemail">
@@ -49,14 +56,17 @@
              value={email}
              onChange={(e) => setEmail(e.target.value)}
              required
+             readOnly
            />
          </div>
 
          <div className="resetbtn">
-           <button type="submit" className="">Send Reset Link</button>
+           <button type="submit" className="" disabled>
+             Send Reset Link
+           </button>
          </div>
        </form>
-       <p className="messageboth">{message}</p>
+       <p className="messageboth">{message} </p>
      </div>
    );
  };

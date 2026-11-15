@@ -4,7 +4,7 @@ import AskQuestion from "./componenets/AskQuestion";
 import QuestionDetailPage from "./pages/QuestionDetailPage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { useCallback, useEffect, useState, createContext } from "react";
 import axios from "./axiosConfig";
 // import LogoutButton from "./pages/Header";
@@ -20,19 +20,32 @@ export const Appstate = createContext();
 function App() {
   const [user, setUser] = useState({});
   const token = localStorage.getItem("token");
+  const { pathname } = useLocation();
   const navigate = useNavigate();
+  const normalizedPath = pathname.replace(/\/+$/, "").toLowerCase();
+  const isPublicRoute =
+    normalizedPath === "/register" || normalizedPath === "/howitworks";
 
   const checkUser = useCallback(async () => {
+    if (!token) {
+      if (!isPublicRoute) {
+        navigate("/login");
+      }
+      return;
+    }
+
     try {
       const { data } = await axios.get("/users/check", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(data);
     } catch (error) {
-      navigate("/login");
+      if (!isPublicRoute) {
+        navigate("/login");
+      }
       console.log(error.response);
     }
-  }, [navigate, token]);
+  }, [isPublicRoute, navigate, token]);
 
   useEffect(() => {
     checkUser();

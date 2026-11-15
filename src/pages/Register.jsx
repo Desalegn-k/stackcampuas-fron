@@ -1,122 +1,91 @@
-import {React,useState} from 'react'
- 
- import {data, Link, useNavigate} from 'react-router-dom';
-  
- import { useRef  } from 'react';
- import axios from '../axiosConfig';
- import './css/Register.css'
- 
- 
-
+import React, { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "../axiosConfig";
+import "./css/Register.css";
 
 export default function Register() {
   const [message, setMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const navigate=useNavigate();
-  const useNameDom=useRef(null);
+  const navigate = useNavigate();
+
+  const useNameDom = useRef(null);
   const firstNameDom = useRef(null);
   const lastNameDom = useRef(null);
   const emailDom = useRef(null);
   const passwordDom = useRef(null);
-   const [showPassword, setShowPassword] = useState(false);
-  
-  
-  
 
   async function HandleSubmit(e) {
- 
-    e.preventDefault(useNameDom);
-    // console.log(useNameDom.current.value)
-    // console.log(firstNameDom.current.value);
-    // console.log(lastNameDom.current.value);
-    // console.log(emailDom.current.value);
-    // console.log(passwordDom.current.value);
+    e.preventDefault();
+
     const firstValue = firstNameDom.current.value;
-    const usernameValue=useNameDom.current.value;
-    const lastValue=lastNameDom.current.value;
-        const emailVlue = emailDom.current.value;
-        const paswordvalue = passwordDom.current.value;
-        if (
-          !usernameValue||
-          !firstValue||
-          !lastValue    ||
-          !emailVlue||
-          !paswordvalue
+    const usernameValue = useNameDom.current.value;
+    const lastValue = lastNameDom.current.value;
+    const emailVlue = emailDom.current.value;
+    const paswordvalue = passwordDom.current.value;
 
-        ) {
-          
-          
-         
-          // const messeage1 = "please provide all requierd informations";
+    if (
+      !usernameValue ||
+      !firstValue ||
+      !lastValue ||
+      !emailVlue ||
+      !paswordvalue
+    ) {
+      setMessage("Please provide all required information.");
+      return;
+    }
 
-          // get.innerHTML = "please provide all requierd informations";
-           setMessage("please provide all requierd informations");
-          return;
-          
-        }
-       
-        
     try {
-      await axios.post("/users/register",{
-        username:usernameValue,
-        firstname:firstValue,
-        lastname:lastValue,
-        email:emailVlue,
-        password:paswordvalue
+      await axios.post("/users/register", {
+        username: usernameValue,
+        firstname: firstValue,
+        lastname: lastValue,
+        email: emailVlue,
+        password: paswordvalue,
       });
-      alert("register succefuly,please login")
-      // setTimeout(()=>{get.innerHTML = "register succefuly,please login";},500)
-      
 
-     navigate('/login')
-      
+      alert("Registration successful, please login.");
+      navigate("/login");
     } catch (error) {
-      // alert(error.response.data.msg)
-      
-      //  get.innerHTML= error.response.data.msg;
-      setMessage(error.response.data.msg);
-      
-       
-        
+      setMessage(
+        error.response?.data?.msg || "Registration failed. Please try again.",
+      );
 
-      console.log(error.response)
-      
+      console.error("Registration error:", error.response || error);
     }
   }
 
   return (
     <>
-      <section className="  whole-co">
+      <section className="whole-co">
         <section className="register-container">
           <div className="internal-regi-container">
             <h1 className="Join-network">Join the network</h1>
+
             <h4 className="already-container">
               <span className="span-already">
-
-              
-
                 Already Have An Account?
-
-
-
                 <Link to="/login" className="sign-in">
                   Sign In
                 </Link>
               </span>
             </h4>
           </div>
+
           <p id="provid">{message}</p>
+
           <form onSubmit={HandleSubmit}>
             <div className="input-cont">
               <input
                 ref={useNameDom}
-                name="user name"
+                name="username"
                 type="text"
                 placeholder="User name*"
               />
             </div>
-            <div className=" last-first ">
-              <div className="F-name  ">
+
+            <div className="last-first">
+              <div className="F-name">
                 <input
                   ref={firstNameDom}
                   name="firstname"
@@ -124,8 +93,9 @@ export default function Register() {
                   placeholder="First name*"
                 />
               </div>
-              <div className="L-name  ">
-                <div className=" ">
+
+              <div className="L-name">
+                <div>
                   <input
                     ref={lastNameDom}
                     name="lastname"
@@ -135,26 +105,31 @@ export default function Register() {
                 </div>
               </div>
             </div>
+
             <div className="input-cont">
               <input
                 ref={emailDom}
-                name=" email"
+                name="email"
                 type="email"
                 placeholder="Email*"
               />
             </div>
+
             <div className="input-cont flex">
               <div className="password">
                 <input
                   ref={passwordDom}
-                  name="Password"
+                  name="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="password*"
+                  placeholder="Password*"
                 />
               </div>
-              <div
+
+              <button
+                type="button"
                 className="show"
                 onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
                 style={{
                   cursor: "pointer",
                   display: "flex",
@@ -163,54 +138,49 @@ export default function Register() {
                 }}
               >
                 <img
-                  src={
-                    showPassword
-                      ? "/icons/normal.png" // eye with slash 
-                      : "/icons/hidn.png" // normal eye (👁)
-                  }
-                  alt={showPassword ? "Hide password" : "Show password"}
+                  src={showPassword ? "/icons/normal.png" : "/icons/hidn.png"}
+                  alt=""
                   style={{ width: "20px", height: "20px" }}
                 />
-              </div>
+              </button>
             </div>
+
             <div className="agree">
-              I agree to the{" "}
-              <Link to="#" className="privacy">
-                privacy policy
-              </Link>{" "}
-              and{" "}
-              <Link to="#" className="privacy">
-                terms of service
-              </Link>
+              I agree to the <span className="privacy">privacy policy</span> and{" "}
+              <span className="privacy">terms of service</span>
             </div>
 
             <div className="submit-btn">
-              <button type="submit" className=" btn btn-primary" id="subm">
+              <button type="submit" className="btn btn-primary" id="subm">
                 Agree and Join
               </button>
             </div>
           </form>
         </section>
-        <section className="discription  ">
+
+        <section className="discription">
           <p className="about">About</p>
-                   <h1 className="about-title">StackCampus</h1>
-                   <p className="abouy-dis">
-                     StackCampus is a collaborative learning platform built for students,
-                     developers, and tech enthusiasts. It provides a space to ask
-                     questions, share knowledge, and learn from peers — just like a
-                     digital campus for coders.
-                   </p>
-                   <p className="abouy-dis">
-                     Our mission is to empower learners by connecting them with a
-                     supportive community where knowledge flows freely. Whether you're
-                     solving coding challenges, exploring new technologies, or helping
-                     others grow, StackCampus is where learning becomes teamwork.
-                     <br />
-                     <br />
-                     <Link to="/Howitworks" className="haw-m1">
-                       How it Works
-                     </Link>
-                   </p>
+
+          <h1 className="about-title">StackCampus</h1>
+
+          <p className="abouy-dis">
+            StackCampus is a collaborative learning platform built for students,
+            developers, and tech enthusiasts. It provides a space to ask
+            questions, share knowledge, and learn from peers — just like a
+            digital campus for coders.
+          </p>
+
+          <p className="abouy-dis">
+            Our mission is to empower learners by connecting them with a
+            supportive community where knowledge flows freely. Whether you're
+            solving coding challenges, exploring new technologies, or helping
+            others grow, StackCampus is where learning becomes teamwork.
+            <br />
+            <br />
+            <Link to="/Howitworks" className="haw-m1">
+              How it Works
+            </Link>
+          </p>
         </section>
       </section>
     </>

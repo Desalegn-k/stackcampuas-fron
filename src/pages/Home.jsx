@@ -1,26 +1,20 @@
- import React, { useEffect, useState, useContext } from "react";
-import { Appstate } from "../App";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAllQuestions } from "../API/questionApi";
 import "./css/Home.css";
 import Arow from "./css/211688_forward_arrow_icon.png";
-import Header from "./Header.jsx";
-// import { Route, Routes,useNavigate } from "react-router-dom";
 
 export default function Home() {
-  
-
-  const { user } = useContext(Appstate);
   const [questions, setQuestions] = useState([]);
-   const token = localStorage.getItem("token");
-   const navigate=useNavigate()
- 
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
-     if (!token) {
-       navigate("/login");
-       return;
-     }
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
     async function fetchQuestions() {
       try {
         const res = await getAllQuestions();
@@ -29,41 +23,43 @@ export default function Home() {
         console.error("Error fetching questions:", err);
       }
     }
-    fetchQuestions();
-  }, []);
 
-  
+    fetchQuestions();
+  }, [navigate, token]);
 
   return (
     <div className="all">
-      {/* <Header/> */}
       <div className="video-container">
         <video autoPlay muted loop id="bg-video">
           <source src="/video-2.mp4" type="video/mp4" />
         </video>
+
         <div className="video-overlay">
           <h1 className="typing">Welcome Back To Stackcampus!</h1>
         </div>
+
         <div className="box-containers">
           <div className="morethan-q">
             100+ <br />
             Questions asked/Week
           </div>
+
           <div className="morethan-q">
             90% <br />
             <p className="test">Questions Answered/Week</p>
           </div>
+
           <div className="morethan-q">
             1000+ <br />
             Visitors/Week
           </div>
         </div>
       </div>
-      
 
       <div className="questions-section">
         <div className="ask-all">
           <h2 className="allquestions">All Questions</h2>
+
           <Link to="/ask" className="ask-btn">
             Ask Question
           </Link>
@@ -77,28 +73,31 @@ export default function Home() {
               <h3 className="linkcontainer">
                 <Link to={`/question/${q.questionid}`} className="asklink">
                   <small className="usreinfo commn">
-                    {/*  Avatar image */}
                     <img
                       src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${q.firstname}`}
                       alt="Profile"
                       className="avatar-img"
                     />
-                    <div className="username"> {q.firstname}</div>
+
+                    <div className="username">{q.firstname}</div>
                   </small>
 
                   <div className="title-desc commn">
                     <span className="title">{q.title}</span>
+
                     <p>
                       <span className="discription-q">
-                        {" "}
                         {q.description.substring(0, 100)}...
                       </span>
+
                       <br />
                       <br />
                       <br />
+
                       <span className="tag">{q.tag && `#${q.tag}`}</span>
                     </p>
                   </div>
+
                   <div className="Arowco">
                     <img src={Arow} alt="" className="Arow" />
                   </div>

@@ -63,7 +63,7 @@ export default function HowItWorks() {
           You can mark the best answer or leave a comment for clarification.
         </li>
         <li>This creates a collaborative space for everyone to learn.</li>
-        <li></li>
+         
       </ul>
       <h2>Help Others</h2>
       <h3>

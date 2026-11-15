@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Four04.css'
 
 export default function Four04() {
   return (
@@ -13,12 +14,12 @@ export default function Four04() {
                 404 <br />
                 Sorry,the page you're looking can't be found.
               </h1>
-              <h6>
+              <h5>
                 Please go back to the {"  "}
                 <Link to="/">home page</Link> and try again.if it still dosen't
                 work for you,Please reach out to me at {"  "}
                 <Link to="https://dessie.netlify.app">get me</Link>.
-              </h6>
+              </h5>
             </div>
           </div>
         </div>

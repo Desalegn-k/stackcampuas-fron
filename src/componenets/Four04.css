@@ -1,0 +1,13 @@
+.internal-page-wrapper,.container{
+  background-color:palevioletred;
+}
+.pt-5{
+  padding: 100px;
+  color: white;
+  
+}
+.font-weght-bols{
+ 
+  font-size: 50px !important;
+
+}

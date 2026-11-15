@@ -1,5 +1,5 @@
  import React, { useState } from "react";
- import axios from "axios";
+ import axios from "../axiosConfig";
  import './css/ForgotPassword.css'
 
  const ForgotPassword = () => {
@@ -9,10 +9,7 @@
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://stackcapus-desalegn.onrender.com/api/users/forgot-password",
-        { email }
-      );
+      const res = await axios.post("/users/forgot-password", { email });
       setMessage(res.data.msg);
     } catch (err) {
       console.error("Forgot password error:", err); // 👈 log full error to browser console

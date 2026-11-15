@@ -1,6 +1,6 @@
  import React, { useState } from "react";
  import { useParams,useNavigate } from "react-router-dom";
- import axios from "axios";
+ import axios from "../axiosConfig";
 //  import "./css/ResetPassword.css";
 
  const ResetPassword = () => {
@@ -13,10 +13,9 @@
    const handleSubmit = async (e) => {
      e.preventDefault();
      try {
-       const res = await axios.post(
-         `https://stackcapus-desalegn.onrender.com/api/users/reset-password/${token}`,
-         { password }
-       );
+       const res = await axios.post(`/users/reset-password/${token}`, {
+         password,
+       });
        setMessage(`${res.data.msg} Navigating to login page...`);
         setTimeout(()=>{
         navigate("/login")

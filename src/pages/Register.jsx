@@ -57,8 +57,8 @@ export default function Register() {
 
   return (
     <>
-      <section className="whole-co">
-        <section className="register-container">
+      <main className="whole-co auth-page auth-register">
+        <section className="register-container auth-card">
           <div className="internal-regi-container">
             <h1 className="Join-network">Join the network</h1>
 
@@ -130,17 +130,10 @@ export default function Register() {
                 className="show"
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? "Hide password" : "Show password"}
-                style={{
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "5px",
-                }}
               >
                 <img
                   src={showPassword ? "/icons/normal.png" : "/icons/hidn.png"}
                   alt=""
-                  style={{ width: "20px", height: "20px" }}
                 />
               </button>
             </div>
@@ -158,7 +151,7 @@ export default function Register() {
           </form>
         </section>
 
-        <section className="discription">
+        <section className="discription auth-about">
           <p className="about">About</p>
 
           <h1 className="about-title">StackCampus</h1>
@@ -182,7 +175,7 @@ export default function Register() {
             </Link>
           </p>
         </section>
-      </section>
+      </main>
     </>
   );
 }

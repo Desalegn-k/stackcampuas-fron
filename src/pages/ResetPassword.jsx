@@ -1,7 +1,8 @@
  import React, { useState } from "react";
  import { useParams,useNavigate } from "react-router-dom";
  import axios from "../axiosConfig";
-//  import "./css/ResetPassword.css";
+ import "./css/ForgotPassword.css";
+ import "./css/ResetPassword.css";
 
  const ResetPassword = () => {
    const { token } = useParams();
@@ -26,12 +27,9 @@
    };
 
    return (
-     <div
-       style={{ textAlign: "center", marginTop: "100px" }}
-       className="classfor"
-     >
+     <main className="classfor password-page">
        <h2>Reset Password</h2>
-       <form onSubmit={handleSubmit} className="resetform">
+       <form onSubmit={handleSubmit} className="resetform password-form">
          <input
            className="forget"
            type="password"
@@ -41,14 +39,14 @@
            required
            
          />
-        <div className="resetbtn">
+        <div className="resetbtn password-actions">
          <button type="submit" className="">
            Reset Password
          </button>
-         </div>
+        </div>
        </form>
        <p >{message}</p>
-     </div>
+     </main>
    );
  };
 

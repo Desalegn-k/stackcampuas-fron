@@ -3,7 +3,7 @@ import '../componenets/How.css'
 
 export default function HowItWorks() {
   return (
-    <section className='how-container'>
+    <main className='how-container'>
       <h1>How StackCampus Works</h1>
       <p>
         StackCampus is a question-and-answer platform designed for students,
@@ -94,6 +94,6 @@ export default function HowItWorks() {
           builds a stronger tech community.
         </li>
       </ul>
-    </section>
+    </main>
   );
 }

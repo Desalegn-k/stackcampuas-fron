@@ -28,7 +28,7 @@ export default function Home() {
   }, [navigate, token]);
 
   return (
-    <div className="all">
+    <div className="home-page">
       <div className="video-container">
         <video autoPlay muted loop id="bg-video">
           <source src="/video-2.mp4" type="video/mp4" />
@@ -40,18 +40,18 @@ export default function Home() {
 
         <div className="box-containers">
           <div className="morethan-q">
-            100+ <br />
-            Questions asked/Week
+            <span className="stat-value">100+</span>
+            <span className="stat-label">Questions asked / week</span>
           </div>
 
           <div className="morethan-q">
-            90% <br />
-            <p className="test">Questions Answered/Week</p>
+            <span className="stat-value">90%</span>
+            <span className="stat-label">Questions answered / week</span>
           </div>
 
           <div className="morethan-q">
-            1000+ <br />
-            Visitors/Week
+            <span className="stat-value">1000+</span>
+            <span className="stat-label">Visitors / week</span>
           </div>
         </div>
       </div>

@@ -37,7 +37,7 @@ export default function Header() {
   }
 
   return (
-    <div className="all">
+    <div className="site-header-shell">
       <header className="app-header">
         <Link to="#">
           <img src="/stack.png" alt="StackCampus" className="logo" />
@@ -50,22 +50,15 @@ export default function Header() {
           </button>
 
           <button className="how" onClick={handlehow}>
-            <Link to="/HowItWorks"> How it Works</Link>
+            How it Works
           </button>
 
           {user && user.firstname ? (
             <>
               <button
+                type="button"
                 onClick={handleLogout}
                 className="logout"
-                style={{
-                  backgroundColor: "transparent",
-                  color: "#ffffff",
-                  padding: "3px 20px",
-                  border: "none",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                }}
               >
                 Logout
               </button>
@@ -80,12 +73,8 @@ export default function Header() {
             </>
           ) : (
             <>
-              <Link to="/register">
-                <button className="signup">Sign Up</button>
-              </Link>
-              <Link to="/login">
-                <button className="login-btn1">Login</button>
-              </Link>
+              <Link to="/register" className="signup">Sign Up</Link>
+              <Link to="/login" className="login-btn1">Login</Link>
             </>
           )}
         </nav>
@@ -93,29 +82,24 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <div className="menu-container">
           <button
+            type="button"
+            className="menu-toggle"
             onClick={toggleMenu}
-            style={{
-              border: "none",
-              cursor: "pointer",
-              background: "transparent",
-            }}
+            aria-label={
+              menuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
-            <img
-              src="/menu.png"
-              alt="Menu"
-              style={{
-                width: "40px",
-                height: "40px",
-              }}
-            />
+            <img src="/menu.png" alt="" />
           </button>
         </div>
       </header>
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="mobile-menu">
-          <button onClick={handleHome} className="home">
+        <div className="mobile-menu" id="mobile-navigation">
+          <button type="button" onClick={handleHome} className="home">
             Home
           </button>
           <Link to="/HowItWorks" className="haw-m">
@@ -124,7 +108,7 @@ export default function Header() {
 
           {user && user.firstname ? (
             <>
-              <button onClick={handleLogout} className="logout">
+              <button type="button" onClick={handleLogout} className="logout">
                 Logout
               </button>
               <div className="mobile-user">

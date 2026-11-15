@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import "./Fottor.css"; // for styling
+import "./Fottor.css";
 
 export default function Layout() {
   return (
@@ -10,7 +9,7 @@ export default function Layout() {
       <footer className="app-footer">
         <div className="logo-icon">
           <img src="/stack.png" alt="StackCampus" />
-          <div class="social-icons">
+          <div className="social-icons" aria-label="Social media">
             <a href="https://www.instagram.com/desalegn.kerie" target="_blank" rel="noreferrer">
               <i className="bi bi-instagram"></i>
             </a>
@@ -33,9 +32,7 @@ export default function Layout() {
               <Link to="#">Privacy Policy</Link>
             </li>
             <li>
-              <li>
-                <p>© {new Date().getFullYear()}  All rights reserved.</p>
-              </li>
+              <p>© {new Date().getFullYear()} All rights reserved.</p>
             </li>
           </ul>
         </div>

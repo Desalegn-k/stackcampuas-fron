@@ -45,7 +45,7 @@ export default function QuestionDetailPage() {
   if (!question) return <p className="lodding">Loading question...</p>;
 
   return (
-    <div className="container">
+    <main className="question-page">
       <h1 className="q">→ Question</h1>
       <h3 className="q-t t">{question.title}</h3>
       <hr  className="titlehr"/>
@@ -95,6 +95,6 @@ export default function QuestionDetailPage() {
           <button type="submit">Post Your Answer</button>
         </div>
       </form>
-    </div>
+    </main>
   );
 }

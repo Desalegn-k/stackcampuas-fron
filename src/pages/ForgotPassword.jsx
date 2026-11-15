@@ -32,11 +32,8 @@
 
 
    return (
-     <div
-       style={{ textAlign: "center", marginTop: "10px" }}
-       className="classfor"
-     >
-       <p className="messageboth" style={{ textAlign: "left", color: "red",backgroundColor:"pink",border:"solid",borderColor:"red", borderRadius:"10px",padding:"1%",fontSize:"18px" }}>
+     <main className="classfor password-page">
+       <p className="messageboth password-notice">
          {" "}
          Password reset is currently unavailable due to server response.
          <br />
@@ -44,8 +41,8 @@
          <a href="mailto:desu2464@gmail.com">desu2464@gmail.com</a> to rest your password and more support.{" "}
        </p>
        <h2>Forgot Password</h2>
-       <form onSubmit={handleSubmit} className="">
-         <div className="resetemail">
+       <form onSubmit={handleSubmit} className="password-form">
+         <div className="resetemail password-field">
            <input
              className="forget"
              type="email"
@@ -57,14 +54,14 @@
            />
          </div>
 
-         <div className="resetbtn">
+         <div className="resetbtn password-actions">
            <button type="submit" className="" disabled>
              Send Reset Link
            </button>
          </div>
        </form>
        <p className="messageboth">{message} </p>
-     </div>
+     </main>
    );
  };
 

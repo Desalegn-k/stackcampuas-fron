@@ -1,139 +1,120 @@
-.main-wrap{
-   background-color: #F8F8F8;
-   
- 
-   
+.main-wrap {
+  width: min(860px, 100%);
+  margin: 0 auto;
 }
 
-.ask-container{
-  
-  margin: 0 auto;
-   padding: 3px 3px !important;
- 
+.ask-container {
+  padding: clamp(22px, 5vw, 48px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
-.post-q{
+
+.steps-co {
+  margin-bottom: 34px;
+  padding: 22px 24px;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  background: #f1f7ff;
+}
+
+.step {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+  font-weight: 750;
+}
+
+.steps-co p {
+  margin: 8px 0;
+  color: var(--color-muted);
+  font-size: 0.93rem;
+}
+
+.post {
+  margin: 0 0 20px;
+  color: var(--color-navy);
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 800;
+  text-align: center;
+}
+
+.post-q {
+  display: grid;
+  gap: 14px;
+}
+
+.common-2 {
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: #fff;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.common-2:focus-within {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.common-2 input,
+.common-2 textarea {
   display: block;
   width: 100%;
-  
+  min-width: 0;
+  padding: 15px 16px;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.98rem;
+  outline: 0;
 }
-.common-2{
-  border: solid;
-  /* border-width: 1px; */
-  border-radius: 5px;
-   
-  
-  margin: 2% 2%;
-  border-color: dodgerblue;
-}
-.common-2 input{
-  
-  background-color: #FFFFFF;
-  width: 100%;
-  padding: 2% 0% 2% 1%;
-  border: none;
-  outline: none;
-   font-family: Poppins, Arial, Helvetica, sans-serif !important;
-  font-size: 20px;
-}
-.common-2 textarea{
-  background-color: #FFFFFF;
-  width: 100%;
-   border: none;
-  outline: none;
-   padding: 2% 0% 2% 1%;
-    font-family: Poppins, Arial, Helvetica, sans-serif !important;
-  font-size: 20px;
 
+.common-2 textarea {
+  min-height: 170px;
+  resize: vertical;
 }
-.post{
-  text-align: center;
-  margin-top: 3%;
-  font-family: Poppins, Arial, Helvetica, sans-serif !important;
-  font-weight: bold;
-}
-.step{
-   margin: 2% 0%;
-  font-family: Poppins, Arial, Helvetica, sans-serif !important;
-  font-weight: bold;
 
+.common-2 input::placeholder,
+.common-2 textarea::placeholder {
+  color: #94a3b8;
 }
-.steps-co p{
-  font-family: Poppins, Arial, Helvetica, sans-serif !important;
-  font-size: 20px;
 
-}
-.submit-div{
-  text-align: center;
-}
-.post-btn{
-  text-align: center;
-
-  
-   width: 50%;
-   padding: 1%;
-  background-color:  white;
-  color:dodgerblue;
-  border: solid;
-  width: 70%;
-  padding: 10px 20px;
-  border-radius: 50px;
-  border-color: black;
+.post.success {
+  margin: 0;
+  color: var(--color-success);
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
   font-weight: 600;
-  font-size: 30px;
-  margin-bottom: 7px;
-   font-family: Poppins, Arial, Helvetica, sans-serif !important;
-    box-shadow: 0 0 10px 0 dodgerblue inset,0 0 20px 0  ;
-
-}
-.post-btn:hover{
-   background-color: transparent;
-  box-shadow: 0 0 10px 0 dodgerblue inset,0 0 20px 0  ;
-   border: 3px solid aqua;
-   color: orange;
-   
-}
-.post-btn:focus{
- background-color: gray;
- cursor: wait;
-}
-.success{
-  color: green;
-}
-@media(max-width:800px){
-  .main-wrap{
-    width: 450px;
-    margin-top: 70px;
-  }
-  .common-2{
-  width: 450px;
-
-   margin: 20px 0;
-}
-.post{
-  margin-top: 50px;
-
-}
-.post-btn{
-  background-color: transparent;
-  color:dodgerblue;
-  border: solid;
-  width: 70%;
-  padding: 10px 20px;
-  border-radius: 50px;
-  border-color: dodgerblue;
-  font-weight: 600;
-  margin-bottom: 7px;
-}
-.post-btn:hover{
-  background-color: transparent;
-  box-shadow: 0 0 10px 0 dodgerblue inset,0 0 20px 0  ;
-   border: 3px solid aqua;
-   color: orange;
-  
-}
-.post-btn:focus{
- background-color: gray;
- cursor: wait;
 }
 
+.submit-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.post-btn {
+  width: min(100%, 300px);
+  min-height: 50px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--color-blue);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 750;
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.post-btn:hover {
+  background: var(--color-blue-dark);
+  box-shadow: 0 9px 22px rgba(37, 99, 235, 0.22);
+  transform: translateY(-1px);
+}
+
+.post-btn:active {
+  transform: translateY(0);
 }

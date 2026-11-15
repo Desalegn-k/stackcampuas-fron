@@ -1,232 +1,82 @@
- body{
-   /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-            url('bcg.jpg') center/cover no-repeat; */
+.auth-register .internal-regi-container {
+  margin-bottom: 24px;
+  text-align: center;
+}
 
- }
- 
- .whole-co{
- 
+.auth-register .already-container {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
 
+.auth-register .span-already {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+.auth-register .sign-in {
+  padding-left: 4px;
+}
+
+.auth-register .last-first {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.auth-register .last-first .F-name,
+.auth-register .last-first .L-name {
   display: flex;
-  justify-content: space-between;
-   
-  width: 90%;
-  margin: 0 auto;
-   
-   
-   /* margin: 3%; */
-  padding: 2% 0;
- 
-  
-  /* height: ; */
-  
-}
-.register-container{
- background-color: #FFFFFF;
-
-  box-shadow: 0 0 8px 2px #ccc;
-   
- 
-    margin: 5px 10px;
-    padding: 45px;
-    width: 50%;
-    
-    background-color: #fff;
-    transition: padding .2s 
-ease-in-out;
-    border-radius: 4px;
-   
-
- 
-  
-}
-.discription{
-  width: 50%;
-   
-   
-}
-.register-container input{
-  border: none;
-  outline-width: 0;
-  width: 90%;
- margin: 2% 0;
- padding: 1% 2%;
+  min-height: 54px;
+  align-items: center;
+  margin: 0;
+  padding: 0 14px;
 }
 
-.input-cont{
-  border: solid;
-  border-width: 0.3x;
-  border-radius: 8px;
-  margin: 4% 0;
-  border-color: dodgerblue;
+.auth-register .last-first .F-name input,
+.auth-register .last-first .L-name input {
+  padding: 12px 0;
 }
-.input-cont:focus{
-  border-color: red
 
+.auth-register .input-cont.flex {
+  padding-right: 8px;
 }
-.last-first{display: flex;
-justify-content: space-between;}
 
-.L-name{
-  border: solid;
-  margin-left: 8%;
-   border-width:  px;
-    border-radius: 8px;
-  
-   padding:2% 2% ;
-   border-color: dodgerblue;
-    
-    
+.auth-register .agree {
+  margin: 18px 0;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  text-align: center;
 }
- .F-name{
-  border: solid;
-   border-radius: 8px;
-  
-  
-  padding:2% 2% ;
-  border-color: dodgerblue;
-  
-    
- }
-  
 
- .F-name input{
-  width: 100%;
- }
-  
- .L-name input{
-  width: 100%;
- }
-  
+.auth-register .privacy {
+  color: var(--color-blue);
+  font-weight: 650;
+}
 
-  .flex{
-    /* border: solid; */
-
-
-   
-    display: flex;
-    margin: 2% 0;
-     
-  }
-
-  .show{
-    margin-left: 170px;
-    padding: 4% 2%;
-    
-  }
-  .password{
-     padding: 2% 0;
-  }
-  .password input{
-    width: 100%;
-    
-  }
-
-
-  .internal-regi-container{
-    text-align: center;
-  }
-  .already-container{
-    padding: 3%;
-  }
-  .span-already{
-    color: #FF8500;
-  }
-  .sign-in{
-    text-decoration: none;
-    padding-left: 5px;
-  }
-  .agree{
-    text-align: center;
-    margin: 3% 0;
-  }
-  .privacy{
-    color: #FF8500;
-    text-decoration: none;
-    
-  }
-  .privacy:hover{
-    text-decoration: underline;
-  }
-  .submit-btn{
-    text-align: center;
-  }
-   .btn{
-    background-color:   #516cf0;
-    width: auto;
-    padding: 3%  ;
-    width: 100%;
-    cursor: pointer;
- color: white;
-    border-radius: 8px;
-    border: none;
-    font-size: 25px ;
-
-   } 
-   .btn:hover{
-    background-color: #FF8500;
-    
-    border: none;
- 
-     
-   }
-   .btn:focus{
-    cursor: wait;
-    background-color: gray;
-   }
-   #provid{
-     
-    
-    color: #d93025;           /* Red tone for errors */
-  background-color: #ffe6e6; /* Light red background */
-  font-family: 'Poppins', sans-serif;  /* Clean modern font */
-  font-size: 14px;           /* Comfortable small text */
-  font-weight: 500;          /* Slightly bold  Space inside the box*/
-  padding: 10px 15px;       
-  border: 1px solid #d93025; /* Red border */
-  border-radius: 6px;        /* Rounded corners */
-  margin-top: 10px;          /* Space from other elements */
-  display: inline-block;  
-  width: 100%;
-  
-     
-   }
-   #provid:empty{
-    display: none;
-   }
-
-    .haw-m1{
-  color: white;
-   background-color: #FF8500;;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 5px 17px;
-  margin-left: 10%;
+.auth-register #provid {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid #fecaca;
   border-radius: 10px;
- }
- .haw-m:hover{
-  background-color: orange;
- }
+  background: #fef2f2;
+  color: var(--color-error);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
 
-   @media (max-width: 900px) {
-  .whole-co{
-    display: block;
-    width: 100%;
-  }
- .register-container{
-   margin: 100px 0 5% 0 ;
-    
-    width: 450px;
-     
-  }
-  .discription{
-    width: 450px;
-  }
-  .last-first{
-    display: block;
-  }
-  .L-name{
-    margin: 3% 0;
+.auth-register #provid:empty {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .auth-register .last-first {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
   }
 }

@@ -5,10 +5,10 @@ import './Four04.css'
 export default function Four04() {
   return (
     <div>
-      <section className="internal-page-wrapper">
-        <div className="container">
-          <div className="row h-100 align-ietms-centrer justify-content-center text-center">
-            <div className="col-12 mt-5 pt-5">
+      <main className="internal-page-wrapper">
+        <div className="error-card">
+          <div className="error-content">
+            <div className="error-message">
               <h1 className="font-weght-bols">
                 {" "}
                 404 <br />
@@ -23,7 +23,7 @@ export default function Four04() {
             </div>
           </div>
         </div>
-      </section>
+      </main>
     </div>
   );
 }

@@ -1,13 +1,36 @@
-.internal-page-wrapper,.container{
-  background-color:palevioletred;
+.internal-page-wrapper {
+  display: grid;
+  min-height: min(66vh, 620px);
+  place-items: center;
 }
-.pt-5{
-  padding: 100px;
-  color: white;
-  
-}
-.font-weght-bols{
- 
-  font-size: 50px !important;
 
+.error-card {
+  width: min(720px, 100%);
+  padding: clamp(30px, 7vw, 72px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.error-message h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  letter-spacing: -0.05em;
+}
+
+.error-message h5 {
+  margin: 0;
+  color: var(--color-muted);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.18rem);
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.error-message a {
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }

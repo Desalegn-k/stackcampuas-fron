@@ -89,10 +89,9 @@ export default function Login() {
   }
 
   return (
-    <div className="all">
+    <main className="whole-co auth-page auth-login">
       {/* <Header/> */}
-      <section className="whole-co">
-        <section className="login-container">
+      <section className="login-container auth-card">
           <div className="internal-regi-container">
             <h1>Login To Your Account</h1>
             <h6 className="addition">
@@ -141,15 +140,11 @@ export default function Login() {
                   placeholder="Enter your password"
                 />
               </div>
-              <div
+              <button
+                type="button"
                 className="showl"
                 onClick={() => setShowPassword(!showPassword)}
-                style={{
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "5px",
-                }}
+                aria-label={showPassword ? "Hide password" : "Show password"}
               >
                 <img
                   src={
@@ -157,10 +152,9 @@ export default function Login() {
                       ? "/icons/normal.png" // eye with slash (🙈)
                       : "/icons/hidn.png" // normal eye (👁)
                   }
-                  alt={showPassword ? "Hide password" : "Show password"}
-                  style={{ width: "20px", height: "20px" }}
+                  alt=""
                 />
-              </div>
+              </button>
             </div>
 
             <p className="forgot">
@@ -177,7 +171,7 @@ export default function Login() {
           </form>
         </section>
 
-        <section className="discription">
+        <section className="discription auth-about">
           <p className="about">About</p>
           <h1 className="about-title">StackCampus</h1>
           <p className="abouy-dis">
@@ -197,8 +191,7 @@ export default function Login() {
               How it Works
             </Link>
           </p>
-        </section>
       </section>
-    </div>
+    </main>
   );
 }

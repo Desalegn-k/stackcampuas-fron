@@ -1,248 +1,154 @@
-
-*{
-  margin: 0;
-  padding: 0;
-}
-.app-header {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  right: 0;
-   
- background: linear-gradient(135deg ,orange,dodgerblue ,green);
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  
-   
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  /* z-index: 1000; */
-}
-.menu-container{
-  display: none;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-.main-content {
-  margin-top: 80px; /* offset for fixed header */
-  min-height: calc(100vh - 140px);
-  padding: 20px;
-}
-
- 
-.welcom{
+.site-header-shell {
   position: relative;
-   
+  z-index: 20;
 }
 
-.avatar-pro{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 0px;
-  background-color: rgb(106, 0, 255);
-  z-index: -1;
-  
-}
-.online{
-  margin-left: 0;
- 
-  /* bottom: 4px;    
-  right: 4px;
-  width: 12px;
-  height: 12px; */
-  background-color: #28a745; /* green = online */
-  border: 2px solid white;   /* optional: border to separate from avatar */
-  border-radius: 50%;  
-}
-
-.online{
-  margin-left: 0;
-  width: 20px;
-   position: absolute;
-}
-.logo{
-  width: 150px;
-  height: 60px;
-  border-radius: 50%;
-}
-.nav-links{
-  width: 50%;
-  margin-left: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.usernamepro{
-  font-weight: bold;
-  columns: red;
-}
-.login-btn{
-  background-color: rgb(46, 46, 220);
-  color:  #fff;
-  padding: 6px 20px;
-  border: none;
- border-radius: 6px;
- cursor: pointer
-               
-}
-.home1{
- background-color: transparent;
-  color: white;
-  padding: 5px 15px;
-  border: none;
-  border-radius:6px ;
-  cursor: pointer;
-  font-weight: 800;
-  
-              
-}
-
-.home1:hover{
-   
-  color: orange;
-}
-.how{
-
-     padding: 5px 10px;
-  border: none;
- border-radius: 6px;
- 
-color: white;
-  
- cursor: pointer;
- background-color: transparent;
-
-
-   
- 
- 
-}
-.how:hover{
-  
-  color: white;
-  text-decoration: none;
-
-}
- 
-/* .how-co{
-   padding: 8px 16px;
-  border: none;
- border-radius: 6px;
- 
- color: black;
- cursor: pointer
-
-} */
-.how-co .how{
-   color: white;
-}
-.usernamepro{
-  padding-left: 2px;
-  color: white;
-  text-transform: uppercase;
-}
 .app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f5f5f5;
-  padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px clamp(18px, 5vw, 72px);
+  background: rgba(20, 33, 61, 0.97);
+  box-shadow: 0 8px 26px rgba(20, 33, 61, 0.14);
+  color: #fff;
+  backdrop-filter: blur(14px);
+}
+
+.app-header > a {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
 }
 
 .logo {
-  width: 150px;
-  height: 80px;
+  display: block;
+  width: 140px;
+  max-width: 35vw;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: contain;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: clamp(12px, 2.4vw, 30px);
 }
 
+.nav-links button,
 .nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-
-}
-.nav-links a:hover{
-  text-decoration: none;
-  color: orange;
-}
-
-.login-btn1 {
-  background-color: transparent;
-  
-  color: white;
-  border: none;
-  padding: 5px 14px;
-  border-radius: 6px;
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #e2e8f0;
   cursor: pointer;
-  font-weight: 600;
+  font-size: 0.93rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
 }
-.login-btn1:hover{
-   
-  color:orange;
 
+.nav-links button:hover,
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-links .signup,
+.nav-links .login-btn1 {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.nav-links .signup:hover {
+  border-color: #fff;
+}
+
+.nav-links .login-btn1 {
+  border-color: var(--color-blue);
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.nav-links .login-btn1:hover {
+  background: var(--color-blue-dark);
+}
+
+.nav-links .logout {
+  color: #e2e8f0;
+}
+
+.welcome {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
 .avatar-pro {
-  width: 50px;
-  height: 50px;
+  width: 38px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
   border-radius: 50%;
-  margin-left: 10px;
+  background: #e0f2fe;
+  object-fit: cover;
+}
+
+.usernamepro {
+  color: #fff;
+  text-transform: capitalize;
 }
 
 .menu-container {
   display: none;
 }
-.mobile-menu{
+
+.menu-toggle {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.menu-toggle img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.mobile-menu {
   display: none;
 }
-.signup{
 
-  background-color: transparent;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  
-}
-.signup:hover{
-   
-  color:orange;
-}
-.logout{
-  
-  font-weight: 600;
+@media (max-width: 760px) {
+  .app-header {
+    min-height: 68px;
+    padding-inline: 18px;
+  }
 
-}
-.logout:hover{
-  color: orange !important;
-}
-/* === Mobile Styling === */
-@media (max-width: 768px) {
+  .logo {
+    width: 124px;
+    height: 46px;
+  }
+
   .nav-links {
-    display: none; /* hide top nav on mobile */
+    display: none;
   }
 
   .menu-container {
@@ -250,78 +156,72 @@ color: white;
   }
 
   .mobile-menu {
+    position: fixed;
+    top: 76px;
+    right: 14px;
+    z-index: 1001;
     display: flex;
+    width: min(320px, calc(100vw - 28px));
     flex-direction: column;
-    
-   background-color: #f5f5f5; 
-    color: #333333;
-    width: 50%;
-     
-    position:fixed;
-    top: 0px;
-    right: 0px;
-    left: 50%;
-    border-radius: 10px;
-    padding: 30px 15px 15px 15px;
-    margin-top: 100px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    font-weight: bold;
-    font-size: 20px;
+    gap: 6px;
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--shadow-card);
   }
 
   .mobile-menu a,
   .mobile-menu button {
-    background: none;
-    border: none;
-    color: black;
-    text-align: left;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
+    display: flex;
+    min-height: 46px;
+    align-items: center;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--color-text);
     cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 650;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu button:hover {
+    background: #eff6ff;
+    color: var(--color-blue);
   }
 
   .mobile-user {
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    gap: 10px;
+    padding: 8px 12px;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
   }
 
-  .mobile-user img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 10px;
+  .mobile-user .avatar-pro {
+    width: 34px;
+    height: 34px;
+    border-color: var(--color-border);
   }
- .mobile-menu .haw-m{
-  color: orange;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 20px;
- }
-.mobile-menu .logout{
-  color: red;
-   font-weight: bold;
-  font-size: 20px;
-}
-.mobile-menu .home{
-  color: #28a745;
-  font-weight: bold;
-  font-size: 20px;
-}
- .mobile-user .pro-m{
-  color: #0000ff;
-  font-weight: bold;
-  font-size: 35px;
-}
-.mobile-menu .login-m{
-  color: #0000ff;
-  text-decoration: none;
-   font-weight: bold;
-  font-size: 20px;
-  
 
-}
+  .mobile-user .pro-m {
+    color: var(--color-navy);
+    font-weight: 700;
+    text-transform: capitalize;
+  }
 }
 
+@media (max-width: 380px) {
+  .app-header {
+    min-height: 64px;
+  }
+
+  .mobile-menu {
+    top: 70px;
+  }
+}

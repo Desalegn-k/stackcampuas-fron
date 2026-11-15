@@ -7,7 +7,7 @@ import '../componenets/SharedLayout.css'
 
 export default function SharedLayout() {
   return (
-    <div>
+    <div className="site-layout">
       <Header />
       <div className='main'>
         <Outlet />

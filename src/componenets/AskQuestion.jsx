@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createQuestion } from "../API/questionApi";
 import '../componenets/Ask.css'
-import Header from "../pages/Header";
 
 export default function AskQuestion() {
   const [title, setTitle] = useState("");

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Fottor.css"; // for styling
 
 export default function Layout() {
@@ -11,18 +11,16 @@ export default function Layout() {
         <div className="logo-icon">
           <img src="/stack.png" alt="StackCampus" />
           <div class="social-icons">
-            <a href="https://www.instagram.com/desalegn.kerie" target="_blank">
-              <i class="bi bi-instagram"></i>
+            <a href="https://www.instagram.com/desalegn.kerie" target="_blank" rel="noreferrer">
+              <i className="bi bi-instagram"></i>
             </a>
-            <a href="https://t.me/Desu_Love" target="_blank">
-              <i class="bi bi-telegram"></i>
+            <a href="https://t.me/Desu_Love" target="_blank" rel="noreferrer">
+              <i className="bi bi-telegram"></i>
             </a>
-            <a href="https://twitter.com/Dkerie3265" target="_blank">
-              <i class="bi bi-twitter"></i>
+            <a href="https://twitter.com/Dkerie3265" target="_blank" rel="noreferrer">
+              <i className="bi bi-twitter"></i>
             </a>
-            <a href="#" target="">
-              <i class="bi bi-linkedin"></i>
-            </a>
+            <span className="bi bi-linkedin" aria-hidden="true"></span>
           </div>
         </div>
 

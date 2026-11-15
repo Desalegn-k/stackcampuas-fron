@@ -5,7 +5,7 @@ import QuestionDetailPage from "./pages/QuestionDetailPage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { useEffect, useState, createContext } from "react";
+import { useCallback, useEffect, useState, createContext } from "react";
 import axios from "./axiosConfig";
 // import LogoutButton from "./pages/Header";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -22,27 +22,21 @@ function App() {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
-  async function checkUser() {
-      
+  const checkUser = useCallback(async () => {
     try {
       const { data } = await axios.get("/users/check", {
         headers: { Authorization: `Bearer ${token}` },
-
       });
       setUser(data);
-    
-      
     } catch (error) {
-       
-
-        navigate("/login");
+      navigate("/login");
       console.log(error.response);
     }
-  }
+  }, [navigate, token]);
 
-useEffect(() => {
-  checkUser();
-}, []);
+  useEffect(() => {
+    checkUser();
+  }, [checkUser]);
 
   return (
     <Appstate.Provider value={{ user, setUser }}>
